@@ -10,10 +10,10 @@ namespace PiSubmarine::GPIO::Api
 	template<typename T>
 	concept PinGroupConcept = requires(T pin)
 	{
-		{ pin.GetDirection() } -> std::same_as<Direction>;
+		{ pin.GetDirection() } -> std::same_as<std::optional<Direction>>;
 		{ pin.SetDirection(Direction{}) } -> std::same_as<void>;
 
-		{ pin.GetLevel() } -> std::same_as<Level>;
+		{ pin.GetLevel() } -> std::same_as<std::optional<Level>>;
 		{ pin.SetLevel(Level{}) } -> std::same_as<void>;
 	};
 
