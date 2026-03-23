@@ -1,6 +1,6 @@
 #pragma once
-#include "Direction.h"
-#include "Level.h"
+#include "PiSubmarine/GPIO/Api/Direction.h"
+#include "PiSubmarine/GPIO/Api/Level.h"
 
 namespace PiSubmarine::GPIO::Api
 {
