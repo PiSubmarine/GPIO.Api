@@ -1,8 +1,7 @@
 #pragma once
 
-#include <cstdint>
-
 #include "PiSubmarine/GPIO/Api/IPinGroup.h"
+#include <string_view>
 
 namespace PiSubmarine::GPIO::Api
 {
