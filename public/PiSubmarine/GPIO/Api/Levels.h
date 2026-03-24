@@ -1,9 +1,7 @@
 #pragma once
 
-#include <cstdint>
-
+#include <cstddef>
 #include "BitfieldType.h"
-
 #include "PiSubmarine/GPIO/Api/Level.h"
 
 namespace PiSubmarine::GPIO::Api
@@ -14,12 +12,12 @@ namespace PiSubmarine::GPIO::Api
         constexpr Levels() = default;
         explicit constexpr Levels(BitfieldType bits) : m_Bits(bits) {}
 
-        constexpr Level Get(size_t pin) const
+        constexpr Level Get(std::size_t pin) const
         {
             return (m_Bits >> pin) & 1 ? Level::High : Level::Low;
         }
 
-        constexpr void Set(size_t pin, Level level)
+        constexpr void Set(std::size_t pin, Level level)
         {
             m_Bits |= static_cast<uint64_t>(level) << pin;
         }

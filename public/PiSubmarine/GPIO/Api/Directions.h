@@ -3,7 +3,7 @@
 #include <cstdint>
 
 #include "BitfieldType.h"
-
+#include <cstddef>
 #include "PiSubmarine/GPIO/Api/Direction.h"
 
 namespace PiSubmarine::GPIO::Api
@@ -14,12 +14,12 @@ namespace PiSubmarine::GPIO::Api
         constexpr Directions() = default;
         constexpr explicit Directions(BitfieldType bits) : m_Bits(bits) {}
 
-        [[nodiscard]] constexpr Direction Get(size_t pin) const
+        [[nodiscard]] constexpr Direction Get(std::size_t pin) const
         {
             return (m_Bits >> pin) & 1 ? Direction::Output : Direction::Input;
         }
 
-        constexpr void Set(size_t pin, Direction direction)
+        constexpr void Set(std::size_t pin, Direction direction)
         {
             m_Bits |= static_cast<uint64_t>(direction) << pin;
         }

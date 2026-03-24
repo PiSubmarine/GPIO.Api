@@ -1,9 +1,7 @@
 #pragma once
 
-#include <cstdint>
-
+#include <cstddef>
 #include "BitfieldType.h"
-
 #include "PiSubmarine/GPIO/Api/MaskBit.h"
 #include <limits>
 
@@ -15,12 +13,12 @@ namespace PiSubmarine::GPIO::Api
         constexpr Mask() = default;
         explicit constexpr Mask(BitfieldType bits) : m_Bits(bits) {}
 
-        [[nodiscard]] constexpr MaskBit Get(size_t pin) const
+        [[nodiscard]] constexpr MaskBit Get(std::size_t pin) const
         {
             return (m_Bits >> pin) & 1 ? MaskBit::Included : MaskBit::Excluded;
         }
 
-        constexpr void Set(size_t pin, MaskBit bit)
+        constexpr void Set(std::size_t pin, MaskBit bit)
         {
             m_Bits |= static_cast<BitfieldType>(bit) << pin;
         }
