@@ -2,6 +2,7 @@
 
 #include "PiSubmarine/GPIO/Api/IPinGroup.h"
 #include <string_view>
+#include <memory>
 
 namespace PiSubmarine::GPIO::Api
 {
@@ -9,6 +10,6 @@ namespace PiSubmarine::GPIO::Api
     {
     public:
         virtual ~IDriver() = default;
-        virtual std::unique_ptr<IPinGroup> GetPinGroup(std::string_view groupName) = 0;
+        virtual std::shared_ptr<IPinGroup> GetPinGroup(std::string_view groupName) = 0;
     };
 }
