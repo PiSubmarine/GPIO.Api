@@ -13,7 +13,7 @@ namespace PiSubmarine::GPIO::Api
     {
         // Must be able to get and set directions
         { t.GetDirections() } -> std::same_as<Directions>;
-        { t.SetDirections(d, m) } -> std::same_as<void>;
+        { t.SetDirections(d) } -> std::same_as<void>;
 
         // Must be able to get and set levels
         { t.GetLevels() } -> std::same_as<Levels>;

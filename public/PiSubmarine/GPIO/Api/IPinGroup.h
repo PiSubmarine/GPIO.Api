@@ -12,7 +12,7 @@ namespace PiSubmarine::GPIO::Api
         virtual ~IPinGroup() = default;
 
         virtual Directions GetDirections() = 0;
-        virtual void SetDirections(Directions directions, Mask mask) = 0;
+        virtual void SetDirections(Directions directions) = 0;
 
         virtual Levels GetLevels() = 0;
         virtual void SetLevels(Levels levels, Mask mask) = 0;
