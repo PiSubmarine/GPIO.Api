@@ -9,7 +9,7 @@ namespace PiSubmarine::GPIO::Api
     TEST(IDriverTest, Concepts)
     {
         static_assert(DriverConcept<IDriver>, "IDriver must satisfy DriverConcept");
-        static_assert(PinGroupConcept<IPinGroup>, "IPinGroup must satisfy IPinGroup");
+        static_assert(PinGroupConcept<IPinGroup>, "IPinGroup must satisfy PinGroupConcept");
 
     }
 }

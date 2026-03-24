@@ -9,6 +9,6 @@ namespace PiSubmarine::GPIO::Api
     {
     public:
         virtual ~IDriver() = default;
-        virtual IPinGroup& GetPinGroup(std::string_view groupName) = 0;
+        virtual std::unique_ptr<IPinGroup> GetPinGroup(std::string_view groupName) = 0;
     };
 }

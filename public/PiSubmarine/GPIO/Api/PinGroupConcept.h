@@ -1,21 +1,25 @@
 #pragma once
 
-#include <cstdint>
 #include <concepts>
-#include "PiSubmarine/GPIO/Api/Direction.h"
-#include "PiSubmarine/GPIO/Api/Level.h"
-#include <vector>
+#include <cstdint>
+#include "PiSubmarine/GPIO/Api/Directions.h"
+#include "PiSubmarine/GPIO/Api/Levels.h"
+#include "PiSubmarine/GPIO/Api/Mask.h"
 
 namespace PiSubmarine::GPIO::Api
 {
-	template<typename T>
-	concept PinGroupConcept = requires(T pin)
-	{
-		{ pin.GetDirection() } -> std::same_as<std::vector<Direction>>;
-		{ pin.SetDirection(std::vector<Direction>{}) } -> std::same_as<void>;
+    template <typename T>
+    concept PinGroupConcept = requires(T t, const T ct, Directions d, Levels l, Mask m)
+    {
+        // Must be able to get and set directions
+        { t.GetDirections() } -> std::same_as<Directions>;
+        { t.SetDirections(d, m) } -> std::same_as<void>;
 
-		{ pin.GetLevel() } -> std::same_as<std::vector<Level>>;
-		{ pin.SetLevel(std::vector<Level>{}) } -> std::same_as<void>;
-	};
+        // Must be able to get and set levels
+        { t.GetLevels() } -> std::same_as<Levels>;
+        { t.SetLevels(l, m) } -> std::same_as<void>;
 
+        // Num() must be callable on a const instance and return a size_t
+        { ct.Num() } -> std::convertible_to<size_t>;
+    };
 }
