@@ -4,6 +4,7 @@
 
 #include "BitfieldType.h"
 #include <cstddef>
+#include <compare>
 #include "PiSubmarine/GPIO/Api/Direction.h"
 
 namespace PiSubmarine::GPIO::Api

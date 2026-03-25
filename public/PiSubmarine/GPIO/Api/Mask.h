@@ -4,6 +4,7 @@
 #include "BitfieldType.h"
 #include "PiSubmarine/GPIO/Api/MaskBit.h"
 #include <limits>
+#include <compare>
 
 namespace PiSubmarine::GPIO::Api
 {

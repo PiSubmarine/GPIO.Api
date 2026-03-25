@@ -2,6 +2,7 @@
 
 #include <cstddef>
 #include "BitfieldType.h"
+#include <compare>
 #include "PiSubmarine/GPIO/Api/Level.h"
 
 namespace PiSubmarine::GPIO::Api
