@@ -30,6 +30,8 @@ namespace PiSubmarine::GPIO::Api
             return Mask{std::numeric_limits<BitfieldType>::max()};
         };
 
+        constexpr auto operator<=>(const Mask&) const = default;
+
     private:
         BitfieldType m_Bits {0};
     };

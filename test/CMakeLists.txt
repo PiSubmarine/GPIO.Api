@@ -5,7 +5,9 @@ include(FetchContent)
 project(PiSubmarine.GPIO.Api.Test LANGUAGES CXX)
 
 set(PiSubmarine.GPIO.Api.Test.Sources
-        "PiSubmarine/GPIO/Api/IDriverTest.cpp")
+        "PiSubmarine/GPIO/Api/IDriverTest.cpp"
+        "PiSubmarine/GPIO/Api/DirectionsTest.cpp"
+)
 
 enable_testing()
 

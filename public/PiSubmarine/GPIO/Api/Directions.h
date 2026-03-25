@@ -26,8 +26,10 @@ namespace PiSubmarine::GPIO::Api
 
         [[nodiscard]] constexpr BitfieldType Raw() const { return m_Bits; }
 
+        constexpr auto operator<=>(const Directions&) const = default;
+
     private:
-        BitfieldType m_Bits;
+        BitfieldType m_Bits{0};
 
 
     };

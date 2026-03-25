@@ -24,6 +24,8 @@ namespace PiSubmarine::GPIO::Api
 
         constexpr BitfieldType Raw() const { return m_Bits; }
 
+        constexpr auto operator<=>(const Levels&) const = default;
+
     private:
         BitfieldType m_Bits {0};
 
