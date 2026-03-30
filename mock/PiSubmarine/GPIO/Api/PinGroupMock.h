@@ -3,9 +3,9 @@
 #include <gmock/gmock.h>
 #include "PiSubmarine/GPIO/Api/IPinGroup.h"
 
-namespace PiSubmarine::Drv8908
+namespace PiSubmarine::GPIO::Api
 {
-    class PinGroupMock : public GPIO::Api::IPinGroup
+    class PinGroupMock : public IPinGroup
     {
     public:
         MOCK_METHOD(GPIO::Api::Directions, GetDirections, (), (override));
