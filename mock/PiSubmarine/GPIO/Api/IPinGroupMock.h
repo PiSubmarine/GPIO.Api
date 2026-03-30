@@ -5,7 +5,7 @@
 
 namespace PiSubmarine::GPIO::Api
 {
-    class PinGroupMock : public IPinGroup
+    class IPinGroupMock : public IPinGroup
     {
     public:
         MOCK_METHOD(GPIO::Api::Directions, GetDirections, (), (override));

@@ -5,7 +5,7 @@
 
 namespace PiSubmarine::GPIO::Api
 {
-    class GpioDriverMock : public IDriver
+    class IDriverMock : public IDriver
     {
     public:
         MOCK_METHOD(std::shared_ptr<IPinGroup>, GetPinGroup,

@@ -2,8 +2,8 @@ message("${_build_cmake_local}")
 include("${_build_cmake_local}")
 
 add_library(PiSubmarine.GPIO.Api.Mock INTERFACE
-        PiSubmarine/GPIO/Api/GpioDriverMock.h
-        PiSubmarine/GPIO/Api/PinGroupMock.h
+        PiSubmarine/GPIO/Api/IDriverMock.h
+        PiSubmarine/GPIO/Api/IPinGroupMock.h
 )
 target_include_directories(PiSubmarine.GPIO.Api.Mock INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}")
 PiSubmarineInitTarget(PiSubmarine.GPIO.Api.Mock)
