@@ -23,3 +23,5 @@ endif()
 # Include the downloaded CMake file
 include("${_build_cmake_local}")
 PiSubmarineInitModule()
+
+add_subdirectory("mock")
